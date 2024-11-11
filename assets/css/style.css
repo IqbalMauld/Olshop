@@ -1,0 +1,295 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: sans-serif;
+    /* overflow: hidden; */
+}
+
+:root{
+    --primary : #00d3da;
+    --primary2 : #a4fb39;
+    --hover: #;
+    --black : rgb(26, 26, 26);
+    --white : rgb(237, 237, 237);
+    --white2 : rgb(196, 241, 255);
+}
+body{
+    background-color: var(--white2);
+}
+/* Navbar Start */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--primary);
+}
+.navbar .nav a{
+    color: var(--black);
+    font-size: 18px;
+    margin: 10px;
+}
+.navbar .nav a:hover{
+    color: var(--white2);
+    transition: 0.3s;
+}
+.navbar .extra input{
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 1px solid var(--black);
+    width: 200px;
+
+}
+.navbar .extra input, .navbar .extra button, .navbar .extra a{
+    gap: 10px;
+}
+.navbar .extra button{
+    background: none;
+    border: none;
+    outline: none;
+}
+.navbar .extra{
+    display: flex;
+    justify-content: space-between;
+}
+/* #shop::after{
+    content: "";
+    font-size: 30px;
+    color: red;
+} */
+#shop{
+    color: var(--black);
+}
+.menu{
+    display: none;
+    width: 20px;
+    height: 15px;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu span{
+    width: 20px;
+    height: 3px;
+    background-color: var(--white);
+}
+
+/* Navbar End */
+
+/* Hero start */
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.hero i{
+    font-size: 1px;
+}
+.hero .pash, .hero .segi, .hero .sport{
+    padding: 10px;
+    background-color: var(--white2);
+    margin: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 2px solid var(--black);
+}
+#kdgp span, #kdgs span , #kdgse span{
+    margin-right: 10px;
+}
+#pashimgp{
+    position: absolute;
+    width: 30px;
+    top: 40%;
+    left: 40%;
+    opacity: 0;
+    transition: 0.3s;
+}
+@keyframes check{
+    0%{
+        opacity: 0;
+    }
+}
+
+.hero .pash p, .hero .segi p, .hero .sport p{
+    font-size: 15px;
+    font-family: sans-serif;
+    padding: 10px;
+}
+.hero .pash button, .hero .segi button, .hero .sport button{
+    padding: 8px;
+    font-size: 10px;
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+}
+
+.hero div button:hover{
+    background-color: var(--white2);
+    color: var(--black);
+    transition: 0.3s ease;
+}
+.hero div h1{
+    padding: 20px;
+}
+.hero .keranjang{
+    position: absolute;
+    width: 300px;
+  max-height: 500px;
+    overflow-y: auto;
+    right: 0;
+    padding: 5px;
+    top: 48px;
+    background-color: var(--primary);
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+    justify-content: space-between;
+
+}
+.hero .keranjang.active{
+   display: flex;
+}
+.hero .keranjang .belanja{
+    display: flex;
+  /* background-color: red; */
+  padding: 10px;
+}
+.hero .keranjang .belanja img{
+    width: 100px;
+}
+.hero .keranjang .belanja .kanan{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.pash img, .segi img, .sport img{
+    width: 150px;
+    
+} 
+button span #tuku{
+    margin-bottom: 130px;
+}
+#beli{
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+    background-color: aliceblue;
+    color: var(--black);
+}
+#beli:hover{
+    background-color: var(--white);
+}
+/* Hero end */
+form{
+    max-width: 400px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 2px solid black; */
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    margin: 10px;
+    gap: 10px;
+    background-color: var(--primary2);
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.5s;
+    box-shadow: 5px 5px 5px var(--black);
+}
+form input{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+form button{
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 1px solid var(--primary2);
+    background-color: var(--primary);
+}
+form button:hover{
+    outline: 2px solid var(--primary);
+    background-color: var(--primary2);
+    transition: 0.3s;
+    
+}
+.done{
+    width: 400px;
+    padding: 20px;
+    background-color: var(--primary2);
+    position: absolute;
+    top: 40%;
+    left: 36%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px var(--black);
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.3s;
+}
+.done h3{
+    text-align: center;
+}
+.done button{
+    text-align: center;
+    margin: 20px 0 20px 145px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary2);
+    background-color: var(--primary);
+}
+.done button:hover{
+    outline: 2px solid var(--primary);
+    background-color: var(--primary2);
+    transition: 0.3s;
+}
+
+
+
+/* Media queries */
+
+@media (max-width: 687px){
+    .navbar .nav{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        background-color: var(--white);
+        width: 200px;
+        min-height: 100vh;
+        background-color: var(--primary);
+        left: -200px;
+        opacity: 0;
+        z-index: 99;
+    }
+    .navbar .menu{
+        display: flex;
+    }
+    .nav.active{
+        transition: 0.3s ease;
+        opacity: 1;
+        left: 0;
+    }
+    .pash img, .segi img, .sport img{
+        width: 100px;
+    }
+    #form{
+        left: 30px;
+    }
+    .done{
+        left: 34px;
+    }
+}

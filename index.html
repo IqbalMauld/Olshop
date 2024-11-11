@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLSHOP</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <!-- NAVBAR start -->
+    <nav class="navbar">
+        <div class="menu" id="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="logo">
+            <h1>OLSHOP</h1>
+        </div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">Tentang</a>
+            <a href="#">Produk </a>
+            <a href="#">Kontak</a>
+        </div>
+        <div class="extra">
+            <input type="text" placeholder="Cari produkmu disini">
+            <button>
+                <i data-feather="search"></i>
+            </button>
+            <a href="#" id="shop">
+                <i id="cart" data-feather="shopping-cart"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- NAVBAR end -->
+
+    <!-- Hero start -->
+     <section class="hero">
+     <div class="pash">
+        <h4 id="pash">Kerudung Pashmina</h4>
+        <img id="pashimg" src="assets/img/pashmina.png" alt="">
+        <img id="pashimgp" src="assets/img/pashmina.png" alt="">
+        <button id="kdgp"><span><i data-feather="shopping-cart"></i></span><br></button>
+        <button id="pas">Beli sekarang <br>Rp.<span>20341</span></button>
+    </div>
+    <div class="segi">
+        <h4 id="segi">Kerudung Segitiga</h4>
+        <img src="assets/img/segi.png" alt="">
+        <button id="kdgse"><span><i data-feather="shopping-cart"></i></span> <br></button>
+        <button id="seg">Beli sekarang <br>Rp.<span>19314</span></button>
+    </div>
+    <div class="sport">
+        <h4 id="sport">Kerudung Sport</h4>
+        <img src="assets/img/sport.png" alt="">
+        <button id="kdgs"><span><i data-feather="shopping-cart"></i></span><br></button>
+        <button id="spt">Beli sekarang <br>Rp.<span>15424</span>
+        </button>
+     </div>
+     <div class="keranjang">
+        <h1>Keranjang Saya</h1>
+        <!-- <div class="belanja">
+       <img src="assets/img/pashmina.png" alt="">
+       <div class="kanan">
+           <p>Kerudung Pashmina</p>
+           <p>Rp. 20.341</p>
+       </div>
+    </div> -->
+    <a href="#" id="beli">Beli sekarang</a>
+     </div>
+     </section>
+     <form name="submit-to-google-sheet" id="form">
+        <input name="nama" type="text" placeholder="Masukan Nama Kamu" required>
+        <input name="barang" type="text" placeholder="Barang"  readonly id="barang">
+        <input name="harga" type="text" placeholder="Harga" readonly id="harga">
+        <input name="alamat" type="text" placeholder="Alamat" required>
+        <button type="submit">Kirim pesanan</button><br>
+      </form>
+      <div class="done">
+        <h3>Terima kasih <br> Pesananmu Segera di proses</h3>
+        <button id="selesai">Selesai</button>
+      </div>
+    <!-- Hero end -->
+    
+<!-- Feather ICons -->
+    <script>
+        feather.replace();
+      </script>
+  <!-- MY Javascript -->
+   <script src="assets/js/index.js"></script>
+</body>
+</html>
