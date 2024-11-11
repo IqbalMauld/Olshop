@@ -26,7 +26,7 @@ kdgp.addEventListener('click', () => {
     const pricepash = document.querySelector('.pash #pas span').innerHTML;
     
     const createImg = document.createElement('img');
-    createImg.src = '/assets/img/pashmina.png';
+    createImg.src = '../img/pashmina.png';
     
     const createDiv = document.createElement('div');
     createDiv.classList.add('belanja');
@@ -59,7 +59,7 @@ kdgse.addEventListener('click', () =>{
     const segi = document.getElementById('segi').innerHTML;
     const pricese = document.querySelector('.segi #seg span').innerHTML;
     const createImg = document.createElement('img');
-    createImg.src = '/assets/img/segi.png';
+    createImg.src = '../img/segi.png';
     const createDiv = document.createElement('div');
     const beli = document.getElementById('beli');
     const createDiv2 = document.createElement('div');
@@ -97,7 +97,7 @@ kdgs.addEventListener('click', () => {
     
     // Membuat elemen gambar baru
     const createImg = document.createElement('img');
-    createImg.src = '/assets/img/sport.png';  // Menentukan sumber gambar
+    createImg.src = '..img/sport.png';  // Menentukan sumber gambar
     
     // Membuat elemen div dan p baru
     const createDiv = document.createElement('div');
