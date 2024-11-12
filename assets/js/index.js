@@ -155,37 +155,46 @@ beli.addEventListener('click', () => {
     const sport = document.getElementById('sport').innerHTML;
     const pricesp = document.querySelector('.sport #spt span').innerHTML;
     
-    const nama = document.querySelector('.nama').innerHTML;
-    const bayar = document.querySelector('.bayar').innerHTML;
     
     const barang = document.getElementById('barang');
     const harga = document.getElementById('harga');
     
+    const namaList = document.querySelectorAll('.nama');
+    const bayarList = document.querySelectorAll('.bayar');
     
-    if(nama === document.querySelector("#pash").innerHTML)
-        {
-            form.style.opacity = '1';
-            form.style.transform = 'scale(1)'
-            barang.value = `${pash}`
-            harga.value = `Rp. ${pricepash}`
-        }
-        else if(nama === document.querySelector("#segi").innerHTML)
-            {
-                form.style.opacity = '1';
-                form.style.transform = 'scale(1)';
-                barang.value = `${segi}`;
-                harga.value = `Rp. ${pricese}`;
-            }
-            else if(nama === document.querySelector("#sport").innerHTML)
-                {
-                    form.style.opacity = '1';
-                    form.style.transform = 'scale(1)';
-                    barang.value = `${sport}`;
-                    harga.value = `Rp. ${pricesp}`;
-                }
-                else{
-        alert("kamu belum belanja");
-    }
+    // Pastikan elemen ada di dalam NodeList sebelum mengakses innerHTML
+    const nama = Array.from(namaList).map(item => item.innerHTML).join(", "); // Gabungkan dengan koma jika ada lebih dari satu
+    const bayar = Array.from(bayarList).map(item => item.innerHTML).join(", "); // Gabungkan dengan koma jika ada lebih dari satu
+    
+    form.style.opacity = '1';
+    form.style.transform = 'scale(1)';
+    barang.value = nama; // Atau gabungkan dengan format lain sesuai kebutuhan
+    harga.value = `${bayar}`; // Format nilai bayar
+    
+    // if(nama === document.querySelector("#pash").innerHTML)
+    //     {
+    //         form.style.opacity = '1';
+    //         form.style.transform = 'scale(1)'
+    //         barang.value = `${pash}`
+    //         harga.value = `Rp. ${pricepash}`
+    //     }
+    //     else if(nama === document.querySelector("#segi").innerHTML)
+    //         {
+    //             form.style.opacity = '1';
+    //             form.style.transform = 'scale(1)';
+    //             barang.value = `${segi}`;
+    //             harga.value = `Rp. ${pricese}`;
+    //         }
+    //         else if(nama === document.querySelector("#sport").innerHTML)
+    //             {
+    //                 form.style.opacity = '1';
+    //                 form.style.transform = 'scale(1)';
+    //                 barang.value = `${sport}`;
+    //                 harga.value = `Rp. ${pricesp}`;
+    //             }
+    //             else{
+    //     alert("kamu belum belanja");
+    // }
 });
 
 
@@ -193,6 +202,7 @@ beli.addEventListener('click', () => {
   const form = document.forms['submit-to-google-sheet']
   
   form.addEventListener('submit', e => {
+      document.querySelector('#spin').style.display = 'inline-block';
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
