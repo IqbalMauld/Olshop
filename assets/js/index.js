@@ -199,8 +199,6 @@ beli.addEventListener('click', () => {
   const doneButton = document.querySelector('#selesai')
   doneButton.addEventListener('click', () =>{
       shop.style.color = 'black';
-    done.style.opacity = '0'
+    done.style.opacity = '0';
+      done.style.transform = 'scale(0)';
 });
-
-          done.style.transform = 'scale(0)'
-  })
