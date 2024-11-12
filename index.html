@@ -6,6 +6,7 @@
     <title>OLSHOP</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <!-- NAVBAR start -->
@@ -19,7 +20,7 @@
             <h1>OLSHOP</h1>
         </div>
         <div class="nav">
-            <a href="#">Home</a>
+            <a href="#" id="hero">Home</a>
             <a href="#">Tentang</a>
             <a href="#">Produk </a>
             <a href="#">Kontak</a>
@@ -37,7 +38,7 @@
     <!-- NAVBAR end -->
 
     <!-- Hero start -->
-     <section class="hero">
+     <section class="hero" id="hero">
      <div class="pash">
         <h4 id="pash">Kerudung Pashmina</h4>
         <img id="pashimg" src="assets/img/pashmina.png" alt="">
@@ -75,7 +76,7 @@
         <input name="barang" type="text" placeholder="Barang"  readonly id="barang">
         <input name="harga" type="text" placeholder="Harga" readonly id="harga">
         <input name="alamat" type="text" placeholder="Alamat" required>
-        <button type="submit">Kirim pesanan</button><br>
+        <button type="submit"><i class="fa fa-spinner fa-spin" id="spin"></i> Kirim pesanan</button><br>
       </form>
       <div class="done">
         <h3>Terima kasih <br> Pesananmu Segera di proses</h3>
