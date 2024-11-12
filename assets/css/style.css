@@ -227,6 +227,9 @@ form button:hover{
     transition: 0.3s;
     
 }
+#spin{
+   display: none;
+}
 .done{
     width: 400px;
     padding: 20px;
@@ -277,6 +280,7 @@ form button:hover{
     }
     .navbar .menu{
         display: flex;
+        margin-top: 5px;
     }
     .nav.active{
         transition: 0.3s ease;
