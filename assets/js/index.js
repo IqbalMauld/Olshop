@@ -196,13 +196,10 @@ beli.addEventListener('click', () => {
         console.error('Error!', error.message)
     )
   });
-  const belanja = document.querySelector('.belanja');
   const doneButton = document.querySelector('#selesai')
   doneButton.addEventListener('click', () =>{
       shop.style.color = 'black';
     done.style.opacity = '0'
-      document.querySelectorAll('.belanja').forEach((el) => {
-    el.classList.remove('belanja');
 });
 
           done.style.transform = 'scale(0)'
