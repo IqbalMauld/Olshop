@@ -76,9 +76,16 @@ kdgse.addEventListener('click', () =>{
     createDiv2.classList.add('kanan');
     creatp.classList.add('nama');
     creatp2.classList.add('bayar');
+    
+    
     createDiv.appendChild(createDiv2);
     createDiv2.appendChild(creatp)
     createDiv2.appendChild(creatp2)
+    const hapus = document.createElement('a');
+    
+    const icon = feather.icons['trash-2'].toSvg();
+    hapus.innerHTML = icon;
+    createDiv.appendChild(hapus);
     
     // keranjang.appendChild(createDiv);
     
@@ -107,11 +114,11 @@ kdgs.addEventListener('click', () => {
     
     // Membuat teks baru untuk nama produk dan harga
     const textp = document.createTextNode(sport);
-    const textp2 = document.createTextNode(pricesp);
+    const textp2 = document.createTextNode(`Rp. ${pricesp}`);
     
     // Membuat elemen span untuk harga
     // const spanSport = document.createElement('span');
-    const rp = document.createTextNode('Rp. ');  // Menambahkan teks "Rp."
+    // const rp = document.createTextNode('Rp. ');  // Menambahkan teks "Rp."
     
     // Menyusun elemen-elemen
     creatp.appendChild(textp);
@@ -133,7 +140,11 @@ kdgs.addEventListener('click', () => {
     // Menyisipkan elemen baru ke dalam keranjang sebelum elemen dengan id 'beli'
     keranjang.insertBefore(createDiv, beli);
 });
+// const trash = document.querySelector('.belanja a');
 
+// trash.addEventListener('click', () =>{
+//       createDiv.style.display = 'none';
+// });
 
 beli.addEventListener('click', () => {
     const form = document.getElementById('form');
@@ -161,44 +172,53 @@ beli.addEventListener('click', () => {
         else if(nama === document.querySelector("#segi").innerHTML)
             {
                 form.style.opacity = '1';
-                form.style.transform = 'scale(1)'
-                barang.value = `${segi}`
-                harga.value = `Rp. ${pricese}`
+                form.style.transform = 'scale(1)';
+                barang.value = `${segi}`;
+                harga.value = `Rp. ${pricese}`;
             }
             else if(nama === document.querySelector("#sport").innerHTML)
                 {
                     form.style.opacity = '1';
-                    form.style.transform = 'scale(1)'
-                    barang.value = `${sport}`
-                    harga.value = `Rp. ${pricesp}`
+                    form.style.transform = 'scale(1)';
+                    barang.value = `${sport}`;
+                    harga.value = `Rp. ${pricesp}`;
                 }
                 else{
-        alert("kamu belum belanja")
+        alert("kamu belum belanja");
     }
 });
 
 
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxfoTQZpDpBscfnrrkrJzmlHX6wW-Qp8Lbx-WFMGrzfRgWwW3vQkToyZqvHx7X2uqLf-A/exec'
   const form = document.forms['submit-to-google-sheet']
-  const done = document.querySelector('.done');
-
+  
   form.addEventListener('submit', e => {
-    e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => {
           form.style.opacity = '0';
           form.style.transform = 'scale(0)'
           done.style.opacity = '1'
           done.style.transform = 'scale(1)'
-      }
+        }
     )
-      .catch(error => 
+    .catch(error => 
         console.error('Error!', error.message)
     )
-  });
-  const doneButton = document.querySelector('#selesai')
-  doneButton.addEventListener('click', () =>{
-      shop.style.color = 'black';
-    done.style.opacity = '0';
-      done.style.transform = 'scale(0)';
 });
+const belanja = document.querySelector('.keranjang .belanja');  // Mengambil semua elemen dengan kelas 'belanja'
+const doneButton = document.querySelector('#selesai');  // Mengambil tombol dengan id 'selesai'
+const done = document.querySelector('.done');
+  
+doneButton.addEventListener('click', () => {
+    // Mencegah refresh halaman jika ada event default (misalnya jika tombolnya adalah link)
+    event.preventDefault();
+    
+    // Lakukan perubahan pada elemen jika perlu
+    done.style.opacity = '0';
+    done.style.transform = 'scale(0)';
+    
+    // Refresh halaman
+    location.reload();  // Memuat ulang halaman saat ini
+  });
+  
