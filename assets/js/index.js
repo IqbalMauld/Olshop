@@ -47,9 +47,23 @@ kdgp.addEventListener('click', () => {
     createDiv.appendChild(createDiv2);
     createDiv2.appendChild(createp);
     createDiv2.appendChild(createp2);
+    const hapus = document.createElement('a');
+    hapus.classList.add('del');
+    
+    const icon = feather.icons['trash-2'].toSvg();
+    hapus.innerHTML = icon;
+    createDiv.appendChild(hapus);
+    
     
     const beli = document.getElementById('beli');
     keranjang.insertBefore(createDiv, beli);
+    
+    hapus.addEventListener('click', (e) => {
+        const divToRemove = e.target.closest('.belanja');
+        setTimeout(() =>{
+            divToRemove.remove();
+        }, 1000)
+    });
 });
 
 
@@ -82,6 +96,7 @@ kdgse.addEventListener('click', () =>{
     createDiv2.appendChild(creatp)
     createDiv2.appendChild(creatp2)
     const hapus = document.createElement('a');
+    hapus.classList.add('del');
     
     const icon = feather.icons['trash-2'].toSvg();
     hapus.innerHTML = icon;
@@ -91,8 +106,14 @@ kdgse.addEventListener('click', () =>{
     
     keranjang.insertBefore(createDiv, beli);
     
+    hapus.addEventListener('click', (e) => {
+        const divToRemove = e.target.closest('.belanja');
+        setTimeout(() =>{
+            divToRemove.remove();
+        }, 1000)
+    });
+    
 });
-
 // sport
 kdgs.addEventListener('click', () => {
     // Mengubah warna teks elemen shop menjadi merah
@@ -112,39 +133,50 @@ kdgs.addEventListener('click', () => {
     const creatp = document.createElement('p');
     const creatp2 = document.createElement('p');
     
-    // Membuat teks baru untuk nama produk dan harga
+    
     const textp = document.createTextNode(sport);
     const textp2 = document.createTextNode(`Rp. ${pricesp}`);
     
-    // Membuat elemen span untuk harga
-    // const spanSport = document.createElement('span');
-    // const rp = document.createTextNode('Rp. ');  // Menambahkan teks "Rp."
     
-    // Menyusun elemen-elemen
+    
+    
+    
+    
     creatp.appendChild(textp);
-    createDiv.classList.add('belanja');  // Menambahkan kelas 'belanja' ke div utama
-    createDiv2.classList.add('kanan');   // Menambahkan kelas 'kanan' ke div kanan
-    creatp.classList.add('nama');        // Menambahkan kelas 'nama' ke p nama produk
-    creatp2.classList.add('bayar');      // Menambahkan kelas 'bayar' ke p harga
+    createDiv.classList.add('belanja');  
+    createDiv2.classList.add('kanan');   
+    creatp.classList.add('nama');        
+    creatp2.classList.add('bayar');      
     
-    // Menambahkan elemen ke dalam struktur div
-    // spanSport.appendChild(rp);            // Menambahkan "Rp." ke spanSport
-    // creatp2.appendChild(spanSport);       // Menambahkan spanSport ke dalam creatp2
-    creatp2.appendChild(textp2);          // Menambahkan harga ke creatp2
     
-    createDiv.appendChild(createImg);     // Menambahkan gambar ke dalam createDiv
-    createDiv.appendChild(createDiv2);    // Menambahkan createDiv2 ke dalam createDiv
-    createDiv2.appendChild(creatp);       // Menambahkan nama produk ke createDiv2
-    createDiv2.appendChild(creatp2);      // Menambahkan harga produk ke createDiv2
+    
+    
+    creatp2.appendChild(textp2);          
+    
+    createDiv.appendChild(createImg);     
+    createDiv.appendChild(createDiv2);   
+    createDiv2.appendChild(creatp);      
+    createDiv2.appendChild(creatp2);     
+    const hapus = document.createElement('a');
+    hapus.classList.add('del');
+    
+    const icon = feather.icons['trash-2'].toSvg();
+    hapus.innerHTML = icon;
+
+    createDiv.appendChild(hapus);
+    
     
     // Menyisipkan elemen baru ke dalam keranjang sebelum elemen dengan id 'beli'
     keranjang.insertBefore(createDiv, beli);
-});
-// const trash = document.querySelector('.belanja a');
+    hapus.addEventListener('click', (e) => {
+        const divToRemove = e.target.closest('.belanja');
 
-// trash.addEventListener('click', () =>{
-//       createDiv.style.display = 'none';
-// });
+    setTimeout(() =>{
+        divToRemove.remove();
+    }, 1000)
+    });
+    
+});;
 
 beli.addEventListener('click', () => {
     const form = document.getElementById('form');
@@ -166,42 +198,42 @@ beli.addEventListener('click', () => {
     const nama = Array.from(namaList).map(item => item.innerHTML).join(", "); // Gabungkan dengan koma jika ada lebih dari satu
     const bayar = Array.from(bayarList).map(item => item.innerHTML).join(", "); // Gabungkan dengan koma jika ada lebih dari satu
     
+// Check if the class 'belanja' exists in the DOM
+if (document.querySelector('.belanja') === null) {
+    // If 'belanja' class is not found, show an alert
+    alert('Keranjang Belanja Kosong');
+} else {
     form.style.opacity = '1';
     form.style.transform = 'scale(1)';
     barang.value = nama; // Atau gabungkan dengan format lain sesuai kebutuhan
     harga.value = `${bayar}`; // Format nilai bayar
-    
-    // if(nama === document.querySelector("#pash").innerHTML)
-    //     {
-    //         form.style.opacity = '1';
-    //         form.style.transform = 'scale(1)'
-    //         barang.value = `${pash}`
-    //         harga.value = `Rp. ${pricepash}`
-    //     }
-    //     else if(nama === document.querySelector("#segi").innerHTML)
-    //         {
-    //             form.style.opacity = '1';
-    //             form.style.transform = 'scale(1)';
-    //             barang.value = `${segi}`;
-    //             harga.value = `Rp. ${pricese}`;
-    //         }
-    //         else if(nama === document.querySelector("#sport").innerHTML)
-    //             {
-    //                 form.style.opacity = '1';
-    //                 form.style.transform = 'scale(1)';
-    //                 barang.value = `${sport}`;
-    //                 harga.value = `Rp. ${pricesp}`;
-    //             }
-    //             else{
-    //     alert("kamu belum belanja");
-    // }
+}
+
+
+
 });
 
+// const beliPas = document.getElementById('pas');
+// const beliSeg = document.getElementById('seg');
+// const beliSpt = document.getElementById('spt');
+// const liveBuy = [beliPas, beliSeg, beliSpt];
 
+// liveBuy.addEventListener('click', () =>{
+//     if(liveBuy[0]){
+//     form.style.opacity = '1';
+//     form.style.transform = 'scale(1)';
+//     }
+//     else{
+//         alert('eror')
+//     }
+// })
+// FOrm kirim pesanan
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxfoTQZpDpBscfnrrkrJzmlHX6wW-Qp8Lbx-WFMGrzfRgWwW3vQkToyZqvHx7X2uqLf-A/exec'
   const form = document.forms['submit-to-google-sheet']
+  const pesan = document.getElementById('pesan');
+
   
-  form.addEventListener('submit', e => {
+  pesan.addEventListener('click', () => {
       document.querySelector('#spin').style.display = 'inline-block';
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
@@ -216,6 +248,16 @@ beli.addEventListener('click', () => {
         console.error('Error!', error.message)
     )
 });
+
+// Tombol Batal
+const batal = document.getElementById('batal');
+
+batal.addEventListener('click', () =>{
+             form.style.opacity = '0';
+          form.style.transform = 'scale(0)'
+})
+
+// Tombol pesanan selesai
 const belanja = document.querySelector('.keranjang .belanja');  // Mengambil semua elemen dengan kelas 'belanja'
 const doneButton = document.querySelector('#selesai');  // Mengambil tombol dengan id 'selesai'
 const done = document.querySelector('.done');
