@@ -173,6 +173,19 @@ body{
     width: 150px;
     
 } 
+.keranjang .del{
+    color: red;
+    top: 10px;
+    background-color: var(--hover);
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+}
+.keranjang .del:hover{
+    background-color: var(--hover);
+}
 button span #tuku{
     margin-bottom: 130px;
 }
@@ -226,6 +239,9 @@ form button:hover{
     background-color: var(--primary2);
     transition: 0.3s;
     
+}
+#batal{
+    padding: 0 20px 0 20px;
 }
 #spin{
    display: none;
